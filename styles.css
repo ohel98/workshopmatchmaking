@@ -184,17 +184,17 @@ body {
 .result-overlay {
   position: absolute;
   left: 50%;
-  top: 60%;                 /* move this up/down to place under heart */
+  top: 62%;                 /* tweak so it sits under the heart */
   transform: translateX(-50%);
   text-align: center;
-  color: #e31b4c;           /* red text on orange */
+  color: #e31b4c;           /* red */
 }
 
-/* "It’s a match!" */
-.result-overlay h2 {
-  margin: 0 0 0.4rem;
-  font-size: 2rem;
-  font-weight: 800;
+/* dynamic workshop name */
+.result-overlay h3 {
+  margin: 0 0 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
   color: #e31b4c;
 }
 
