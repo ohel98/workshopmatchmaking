@@ -131,9 +131,20 @@ body {
 }
 
 /* main green button (Los geht's) */
+/* title button style (same red as other buttons) */
 .btn.primary {
-  background: #00b35a;      /* your brand green */
-  color: #083316;           /* dark text; or use #ffffff if you want white */
+  background: #e31b4c;      /* red */
+  color: #ffffff;           /* white text */
+  border: none;
+  padding: 0.9rem 2.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.btn.primary:hover {
+  background: #ffcd6b;      /* light orange hover */
+  color: #e31b4c;
 }
 
 /* restart button */
