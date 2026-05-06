@@ -174,18 +174,49 @@ body {
 }
 
 /* centered smaller card on top of orange end card */
-.result-card {
+/* result background layer */
+.result-bg {
   position: absolute;
-  top: 50%;
+  inset: 0;
+}
+
+/* overlay aligned under heart */
+.result-overlay {
+  position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(75, 46, 37, 0.92); /* dark overlay card */
-  padding: 2rem 2.5rem;
-  border-radius: 1.2rem;
-  min-width: min(90vw, 520px);
+  top: 60%;                 /* move this up/down to place under heart */
+  transform: translateX(-50%);
   text-align: center;
-  color: #f9fafb;
-  animation: popIn 0.5s ease-out;
+  color: #e31b4c;           /* red text on orange */
+}
+
+/* "It’s a match!" */
+.result-overlay h2 {
+  margin: 0 0 0.4rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e31b4c;
+}
+
+/* workshop title */
+.result-overlay h3 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  color: #e31b4c;
+}
+
+/* logo */
+.result-overlay img {
+  max-width: 160px;
+  margin: 0 auto 1.4rem;
+  display: block;
+}
+
+/* restart button styled to fit theme */
+.btn.secondary {
+  background: #ffffff;
+  color: #e31b4c;
+  border: 2px solid #e31b4c;
 }
 
 .result-card h2 {
