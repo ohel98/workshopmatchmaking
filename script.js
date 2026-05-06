@@ -6,25 +6,16 @@ const answers = {
 };
 
 // Result mapping
-// key format: "length-group-mode"
 const results = {
   "long-large-onsite": {
-    title: "SkillUp! Workshops",
-    image: "assets/skillup-workshops.png"
+    title: "SkillUp! Workshops"
   },
   "long-small-online": {
-    title: "SkillUp! Online",
-    image: "assets/skillup-online.png"
+    title: "SkillUp! Online"
   },
   "short-small-onsite": [
-    {
-      title: "Coaching",
-      image: "assets/coaching.png"
-    },
-    {
-      title: "StudySnacks",
-      image: "assets/studysnacks.png"
-    }
+    { title: "Coaching" },
+    { title: "StudySnacks" }
   ]
 };
 
@@ -79,22 +70,10 @@ function showResult() {
   showScreen("screen-result");
 }
 
-  titleEl.textContent = resultConfig.title;
-
-  if (resultConfig.image) {
-    imgEl.src = resultConfig.image;
-    imgEl.style.display = "block";
-  } else {
-    imgEl.style.display = "none";
-  }
-
-  showScreen("screen-result");
-}
-
-// Restart quiz
+// Restart -> back to title
 document.getElementById("restart-btn").addEventListener("click", () => {
   answers.length = null;
   answers.group = null;
   answers.mode = null;
-  showScreen("screen-title");   // go back to intro, not q1
+  showScreen("screen-title");
 });
