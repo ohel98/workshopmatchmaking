@@ -7,53 +7,83 @@
 </head>
 <body>
   <!-- Title screen -->
-<section id="screen-title" class="screen active">
-  <video id="title-video" class="bg-video" autoplay muted loop playsinline>
+  <section id="screen-title" class="screen active">
+    <div class="title-bg">
+  <video class="bg-media" autoplay muted loop playsinline>
     <source src="assets/title.mp4" type="video/mp4" />
   </video>
-  <div class="title-overlay">
-    <h1>Workshop Matchmaking</h1>
-    <button id="start-btn" class="btn primary">Los geht’s</button>
-  </div>
-</section>
+      </div>
+   <div class="title-overlay">
+      <h1>Workshop Matchmaking</h1>
+      <button id="start-btn" class="btn primary">Los geht’s</button>
+    </div>
+  </section>
 
-  <!-- Question screens -->
+  <!-- QUESTION 1 -->
   <section id="screen-q1" class="screen">
-    <h2>Kurze oder lange Workshops?</h2>
-    <div class="options">
-      <button class="btn option" data-question="length" data-value="short">kurze Workshops</button>
-      <button class="btn option" data-question="length" data-value="long">lange Workshops</button>
+    <div class="card">
+      <h2>Kurze oder lange Workshops?</h2>
+      <div class="options">
+        <button class="btn option" data-question="length" data-value="short">
+          kurze Workshops
+        </button>
+        <button class="btn option" data-question="length" data-value="long">
+          lange Workshops
+        </button>
+      </div>
     </div>
   </section>
 
+  <!-- QUESTION 2 -->
   <section id="screen-q2" class="screen">
-    <h2>Große oder kleine Gruppen?</h2>
-    <div class="options">
-      <button class="btn option" data-question="group" data-value="large">große Gruppen</button>
-      <button class="btn option" data-question="group" data-value="small">kleine Gruppen</button>
+    <div class="card">
+      <h2>Große oder kleine Gruppen?</h2>
+      <div class="options">
+        <button class="btn option" data-question="group" data-value="large">
+          große Gruppen
+        </button>
+        <button class="btn option" data-question="group" data-value="small">
+          kleine Gruppen
+        </button>
+      </div>
     </div>
   </section>
 
+  <!-- QUESTION 3 -->
   <section id="screen-q3" class="screen">
-    <h2>Online oder Präsenz?</h2>
-    <div class="options">
-      <button class="btn option" data-question="mode" data-value="online">online</button>
-      <button class="btn option" data-question="mode" data-value="onsite">Präsenz</button>
+    <div class="card">
+      <h2>Online oder Präsenz?</h2>
+      <div class="options">
+        <button class="btn option" data-question="mode" data-value="online">
+          online
+        </button>
+        <button class="btn option" data-question="mode" data-value="onsite">
+          Präsenz
+        </button>
+      </div>
     </div>
   </section>
 
-  <!-- Result screen -->
+  <!-- RESULT SCREEN -->
   <section id="screen-result" class="screen">
-  <video id="result-video" class="bg-video" autoplay muted loop playsinline>
-    <source src="assets/match.mp4" type="video/mp4" />
-  </video>
-  <div class="result-content">
-    <h2>It’s a match!</h2>
-    <h3 id="result-title"></h3>
-    <img id="result-image" alt="Match Logo" />
-    <button id="restart-btn" class="btn secondary">Noch einmal</button>
-  </div>
-</section>
+    <div class="result-bg">
+      <!-- same orange background / video as in your end card -->
+      <!-- Choose either video or image -->
+      <!--
+      <video class="bg-media" autoplay muted loop playsinline>
+        <source src="assets/match-animation.mp4" type="video/mp4" />
+      </video>
+      -->
+      <img src="assets/match-background.jpg" alt="Match Background" class="bg-media" />
+    </div>
+
+    <div class="result-card">
+      <h2>It’s a match!</h2>
+      <h3 id="result-title"></h3>
+      <img id="result-image" alt="Match Logo" />
+      <button id="restart-btn" class="btn secondary">Noch einmal</button>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
