@@ -65,20 +65,19 @@ function showResult() {
   let resultConfig = results[key];
 
   if (!resultConfig) {
-    resultConfig = {
-      title: "Kein Match gefunden",
-      image: ""
-    };
+    resultConfig = { title: "Kein Match gefunden" };
   }
 
-  // Multiple possible matches -> random
   if (Array.isArray(resultConfig)) {
     const randomIndex = Math.floor(Math.random() * resultConfig.length);
     resultConfig = resultConfig[randomIndex];
   }
 
   const titleEl = document.getElementById("result-title");
-  const imgEl = document.getElementById("result-image");
+  titleEl.textContent = resultConfig.title;
+
+  showScreen("screen-result");
+}
 
   titleEl.textContent = resultConfig.title;
 
@@ -97,5 +96,5 @@ document.getElementById("restart-btn").addEventListener("click", () => {
   answers.length = null;
   answers.group = null;
   answers.mode = null;
-  showScreen("screen-q1");
+  showScreen("screen-title");   // go back to intro, not q1
 });
