@@ -16,7 +16,24 @@ const results = {
   "short-small-onsite": [
     { title: "Coaching" },
     { title: "StudySnacks" }
-  ]
+  ],
+
+  // new ones you requested:
+  "short-small-online": {
+    title: "Coaching"
+  },
+  "short-large-online": {
+    title: "StudySnacks"
+  },
+  "short-large-onsite": {
+    title: "StudySnacks"
+  },
+  "long-small-onsite": {
+    title: "Coaching"
+  },
+  "long-large-online": {
+    title: "SkillUp! Workshop II"
+  }
 };
 
 // Helper: show one screen, hide others
