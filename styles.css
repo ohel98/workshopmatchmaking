@@ -71,7 +71,7 @@ body {
 .title-button-overlay {
   position: absolute;
   left: 50%;
-  bottom: 8%;          /* tweak to sit nicely under the text in the video */
+  top: 72%;                 /* tweak this value: 68–75% */
   transform: translateX(-50%);
 }
 
@@ -132,8 +132,8 @@ body {
 
 /* main green button (Los geht's) */
 .btn.primary {
-  background: #22c55e;
-  color: #022c22;
+  background: #00b35a;      /* your brand green */
+  color: #083316;           /* dark text; or use #ffffff if you want white */
 }
 
 /* restart button */
