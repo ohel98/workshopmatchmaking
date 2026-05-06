@@ -33,7 +33,10 @@ body {
   background: url("assets/title-bg.jpg") center/cover no-repeat;
   border-radius: 1rem;
   padding: 4rem 2rem;
-}
+  /* center content */
+  display: flex;
+  align-items: center;
+  justify
 
 #screen-title .title-content {
   background: rgba(15, 23, 42, 0.8);
