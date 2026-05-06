@@ -25,13 +25,52 @@ body {
 }
 
 /* title background */
+/* full screen section */
 #screen-title {
   position: relative;
-  overflow: hidden;
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+
+/* background layer */
+#screen-title .title-bg {
+  position: absolute;
+  inset: 0;
+}
+
+#screen-title .title-bg img,
+#screen-title .title-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* fills screen, keeps proportions */
+  object-position: center;
+}
+
+/* overlay content (text + button) */
+#screen-title .title-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 2.5rem;   /* controls how far from the top */
+  gap: 1rem;
+}
+
+#screen-title h1 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+#screen-title #start-btn {
+  /* reuse your .btn styles; optional extra styling here */
 }
 
 #screen-title .bg-video {
