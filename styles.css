@@ -1,4 +1,13 @@
-html, body {
+/* GLOBAL LAYOUT */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -6,153 +15,25 @@ html, body {
 }
 
 body {
-  background: #0f172a;
-  color: #f9fafb;
+  background: #111827;          /* dark around content */
+  color: #111827;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
+/* SCREENS */
 
 .screen {
   display: none;
-  text-align: center;
-  padding: 2rem;
-  width: 100vw;
-  max-width: none;
-}
-
-/* visible screen */
-.screen.active {
-  display: block;
-  animation: fadeIn 0.5s ease-out;
-}
-
-/* title background */
-/* full screen section */
-#screen-title {
-  position: relative;
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-/* background layer */
-#screen-title .title-bg {
-  position: absolute;
-  inset: 0;
-}
-
-#screen-title .title-bg img,
-#screen-title .title-bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;     /* fills screen, keeps proportions */
-  object-position: center;
-}
-
-/* overlay content (text + button) */
-#screen-title .title-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 2.5rem;   /* controls how far from the top */
-  gap: 1rem;
-}
-
-#screen-title h1 {
-  font-size: 2rem;
-  color: #ffffff;
-}
-
-#screen-title #start-btn {
-  /* reuse your .btn styles; optional extra styling here */
-}
-
-#screen-title .bg-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;      /* see whole card */
-  object-position: center;  /* center it */
-  background: #0f172a;      /* fill leftover space */
-}
-
-#screen-title .title-content {
   position: relative;
-  z-index: 1;
-  background: rgba(15, 23, 42, 0.7);
-  padding: 2rem;
-  border-radius: 1rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.btn {
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
-}
-
-.btn.primary {
-  background: #22c55e;
-  color: #022c22;
-  font-weight: 600;
-}
-
-.btn.secondary {
-  background: #1e293b;
-  color: #e5e7eb;
-}
-
-.btn.option {
-  background: #1f2937;
-  color: #f9fafb;
-  border: 1px solid #374151;
-  transform: scale(1);
-}
-
-.btn.option:hover {
-  background: #22c55e;
-  color: #022c22;
-  transform: scale(1.03);
-}
-
-.result-content img {
-  max-width: 200px;
-  margin: 1rem auto 1.5rem;
+.screen.active {
   display: block;
+  animation: fadeIn 0.4s ease-out;
 }
 
-/* simple fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -164,18 +45,207 @@ h3 {
   }
 }
 
-  /* result pop-in */
-#screen-result.active .result-content {
+/* TITLE SCREEN */
+
+#screen-title {
+  overflow: hidden;
+}
+
+/* background media fills screen */
+.bg-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* title background layer */
+.title-bg {
+  position: absolute;
+  inset: 0;
+}
+
+/* overlay (brown bar with title + button) */
+.title-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background: #4b2e25;          /* brown bar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.title-overlay h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+/* center the button inline with title */
+.title-overlay .btn {
+  margin-left: 1rem;
+}
+
+/* GENERIC CARD FOR QUESTIONS */
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f97316;         /* orange card */
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  min-width: min(90vw, 640px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.card h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.8rem;
+  color: #b91c1c;              /* red text */
+}
+
+/* OPTIONS / BUTTONS */
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+/* main green button (Los geht's) */
+.btn.primary {
+  background: #22c55e;
+  color: #022c22;
+}
+
+/* restart button */
+.btn.secondary {
+  background: #4b2e25;
+  color: #f9fafb;
+}
+
+/* answer options: centered and matching card */
+.btn.option {
+  width: 220px;
+  max-width: 80%;
+  background: #991b1b;         /* darker red button on orange */
+  color: #fef2f2;
+}
+
+/* hover states */
+.btn:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn.option:hover {
+  background: #facc15;         /* yellowish hover like highlight */
+  color: #4b2e25;
+}
+
+/* RESULT SCREEN */
+
+#screen-result {
+  overflow: hidden;
+}
+
+/* orange end background (image or video) */
+.result-bg {
+  position: absolute;
+  inset: 0;
+}
+
+/* centered smaller card on top of orange end card */
+.result-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(75, 46, 37, 0.92); /* dark overlay card */
+  padding: 2rem 2.5rem;
+  border-radius: 1.2rem;
+  min-width: min(90vw, 520px);
+  text-align: center;
+  color: #f9fafb;
   animation: popIn 0.5s ease-out;
+}
+
+.result-card h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.9rem;
+  color: #facc15;
+}
+
+.result-card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  color: #fef2f2;
+}
+
+/* logo under title */
+.result-card img {
+  max-width: 160px;
+  display: block;
+  margin: 0 auto 1.4rem;
 }
 
 @keyframes popIn {
   from {
     opacity: 0;
-    transform: scale(0.8) translateY(10px);
+    transform: translate(-50%, -50%) scale(0.85);
   }
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* SMALL SCREENS */
+
+@media (max-width: 600px) {
+  .title-overlay {
+    flex-direction: column;
+    padding: 0.8rem 1rem;
+  }
+
+  .title-overlay h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .card {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .card h2 {
+    font-size: 1.4rem;
+  }
+
+  .result-card {
+    padding: 1.8rem 1.4rem;
   }
 }
