@@ -71,7 +71,7 @@ body {
 .title-button-overlay {
   position: absolute;
   left: 50%;
-  top: 72%;                 /* tweak this value: 68–75% */
+  top: 78%;                 /* try 76–80% depending on your screen */
   transform: translateX(-50%);
 }
 
