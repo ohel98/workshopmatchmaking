@@ -14,8 +14,8 @@ body {
   display: none;
   text-align: center;
   padding: 2rem;
-  width: 100%;
-  max-width: 700px;
+  width: 100vw;
+  max-width: none;
 }
 
 /* visible screen */
