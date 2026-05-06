@@ -290,3 +290,24 @@ body {
     padding: 1.8rem 1.4rem;
   }
 }
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  /* Make sure the background fills but keeps the full card visible */
+  #screen-title .bg-media {
+    object-fit: contain;
+  }
+
+  /* Put the button more centrally under the text on small screens */
+  .title-button-overlay {
+    left: 50%;        /* center horizontally on mobile */
+    top: 85%;         /* a bit lower so it's clearly below the text */
+    transform: translateX(-50%);
+  }
+
+  /* Slightly smaller button on mobile so it fits nicely */
+  .title-button-overlay .btn {
+    font-size: 0.95rem;
+    padding: 0.8rem 2.1rem;
+  }
+}
