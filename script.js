@@ -36,7 +36,7 @@ function showScreen(id) {
   document.getElementById(id).classList.add("active");
 }
 
-// Title screen start
+// Start button on title screen
 document.getElementById("start-btn").addEventListener("click", () => {
   showScreen("screen-q1");
 });
@@ -49,7 +49,6 @@ document.querySelectorAll(".btn.option").forEach(btn => {
 
     answers[question] = value;
 
-    // Move to next screen
     if (question === "length") {
       showScreen("screen-q2");
     } else if (question === "group") {
@@ -66,20 +65,18 @@ function showResult() {
   let resultConfig = results[key];
 
   if (!resultConfig) {
-    // fallback, if a combination is not defined
     resultConfig = {
       title: "Kein Match gefunden",
       image: ""
     };
   }
 
-  // If there are multiple possible matches, pick one at random
+  // Multiple possible matches -> random
   if (Array.isArray(resultConfig)) {
     const randomIndex = Math.floor(Math.random() * resultConfig.length);
     resultConfig = resultConfig[randomIndex];
   }
 
-  // Update DOM
   const titleEl = document.getElementById("result-title");
   const imgEl = document.getElementById("result-image");
 
@@ -95,11 +92,10 @@ function showResult() {
   showScreen("screen-result");
 }
 
-// Restart
+// Restart quiz
 document.getElementById("restart-btn").addEventListener("click", () => {
   answers.length = null;
   answers.group = null;
   answers.mode = null;
-
   showScreen("screen-q1");
 });
