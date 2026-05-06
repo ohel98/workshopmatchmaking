@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Workshop Matchmaking</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Title screen -->
+  <section id="screen-title" class="screen active">
+    <div class="title-content">
+      <h1>Workshop Matchmaking</h1>
+      <button id="start-btn" class="btn primary">Los geht’s</button>
+    </div>
+  </section>
+
+  <!-- Question screens -->
+  <section id="screen-q1" class="screen">
+    <h2>Kurze oder lange Workshops?</h2>
+    <div class="options">
+      <button class="btn option" data-question="length" data-value="short">kurze Workshops</button>
+      <button class="btn option" data-question="length" data-value="long">lange Workshops</button>
+    </div>
+  </section>
+
+  <section id="screen-q2" class="screen">
+    <h2>Große oder kleine Gruppen?</h2>
+    <div class="options">
+      <button class="btn option" data-question="group" data-value="large">große Gruppen</button>
+      <button class="btn option" data-question="group" data-value="small">kleine Gruppen</button>
+    </div>
+  </section>
+
+  <section id="screen-q3" class="screen">
+    <h2>Online oder Präsenz?</h2>
+    <div class="options">
+      <button class="btn option" data-question="mode" data-value="online">online</button>
+      <button class="btn option" data-question="mode" data-value="onsite">Präsenz</button>
+    </div>
+  </section>
+
+  <!-- Result screen -->
+  <section id="screen-result" class="screen">
+    <div class="result-content">
+      <h2>It’s a match!</h2>
+      <h3 id="result-title"></h3>
+      <img id="result-image" alt="Match Logo" />
+      <button id="restart-btn" class="btn secondary">Noch einmal</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
