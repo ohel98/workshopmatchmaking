@@ -71,13 +71,13 @@ body {
 .title-button-overlay {
   position: absolute;
   left: 50%;
-  top: 77%;                 /* tweak 75–80 to get under "passt zu dir?" */
+  top: 82%;                 /* try 80–84; this is a bit lower than now */
   transform: translateX(-50%);
-  pointer-events: none;     /* wrapper ignores clicks */
+  pointer-events: none;
 }
 
 .title-button-overlay .btn {
-  pointer-events: auto;     /* button stays clickable */
+  pointer-events: auto;
 }
 
 .title-overlay h1 {
