@@ -44,13 +44,16 @@
 
   <!-- Result screen -->
   <section id="screen-result" class="screen">
-    <div class="result-content">
-      <h2>It’s a match!</h2>
-      <h3 id="result-title"></h3>
-      <img id="result-image" alt="Match Logo" />
-      <button id="restart-btn" class="btn secondary">Noch einmal</button>
-    </div>
-  </section>
+  <video id="result-video" class="bg-video" autoplay muted loop playsinline>
+    <source src="assets/match.mp4" type="video/mp4" />
+  </video>
+  <div class="result-content">
+    <h2>It’s a match!</h2>
+    <h3 id="result-title"></h3>
+    <img id="result-image" alt="Match Logo" />
+    <button id="restart-btn" class="btn secondary">Noch einmal</button>
+  </div>
+</section>
 
   <script src="script.js"></script>
 </body>
