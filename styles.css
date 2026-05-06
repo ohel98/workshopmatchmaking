@@ -70,7 +70,7 @@ body {
 /* overlay with only the button, near bottom center */
 .title-button-overlay {
   position: absolute;
-  left: 68%;
+  left: 80%;
   top: 90%;                 /* try 80–84; this is a bit lower than now */
   transform: translateX(-50%);
   pointer-events: none;
