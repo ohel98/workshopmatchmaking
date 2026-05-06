@@ -71,13 +71,13 @@ body {
 .title-button-overlay {
   position: absolute;
   left: 50%;
-  top: 77%;                 /* adjust 75–80 until it looks perfect */
+  top: 77%;                 /* tweak 75–80 to get under "passt zu dir?" */
   transform: translateX(-50%);
-  pointer-events: none;     /* important, see below */
+  pointer-events: none;     /* wrapper ignores clicks */
 }
 
 .title-button-overlay .btn {
-  pointer-events: auto;     /* button itself is clickable */
+  pointer-events: auto;     /* button stays clickable */
 }
 
 .title-overlay h1 {
