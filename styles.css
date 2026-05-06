@@ -71,8 +71,13 @@ body {
 .title-button-overlay {
   position: absolute;
   left: 50%;
-  top: 78%;                 /* try 76–80% depending on your screen */
+  top: 77%;                 /* adjust 75–80 until it looks perfect */
   transform: translateX(-50%);
+  pointer-events: none;     /* important, see below */
+}
+
+.title-button-overlay .btn {
+  pointer-events: auto;     /* button itself is clickable */
 }
 
 .title-overlay h1 {
