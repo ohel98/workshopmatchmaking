@@ -15,8 +15,9 @@ body {
 }
 
 body {
-  background: #111827;          /* dark around content */
+  background: #ffa252;                /* orange background everywhere */
   color: #111827;
+  margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -66,18 +67,12 @@ body {
   inset: 0;
 }
 
-/* overlay (brown bar with title + button) */
-.title-overlay {
+/* overlay with only the button, near bottom center */
+.title-button-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.2rem 1.5rem;
-  background: #4b2e25;          /* brown bar */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  left: 50%;
+  bottom: 8%;          /* tweak to sit nicely under the text in the video */
+  transform: translateX(-50%);
 }
 
 .title-overlay h1 {
@@ -99,18 +94,17 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #f97316;         /* orange card */
+  background: #ffa252;               /* same orange as background */
   padding: 2.5rem 2rem;
   border-radius: 1rem;
   min-width: min(90vw, 640px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   text-align: center;
 }
 
 .card h2 {
-  margin: 0 0 1.5rem;
-  font-size: 1.8rem;
-  color: #b91c1c;              /* red text */
+  margin: 0 0 2rem;
+  font-size: 2rem;                   /* larger text */
+  color: #e31b4c;                    /* red */
 }
 
 /* OPTIONS / BUTTONS */
@@ -123,12 +117,12 @@ body {
 }
 
 .btn {
-  padding: 0.7rem 1.5rem;
+  padding: 1rem 2.25rem;             /* bigger buttons */
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.1rem;                 /* bigger text */
+  font-weight: 600;
   transition:
     transform 0.1s ease,
     box-shadow 0.1s ease,
@@ -150,10 +144,10 @@ body {
 
 /* answer options: centered and matching card */
 .btn.option {
-  width: 220px;
-  max-width: 80%;
-  background: #991b1b;         /* darker red button on orange */
-  color: #fef2f2;
+  width: 260px;
+  max-width: 90%;
+  background: #e31b4c;               /* red buttons */
+  color: #fff7ed;
 }
 
 /* hover states */
@@ -163,8 +157,8 @@ body {
 }
 
 .btn.option:hover {
-  background: #facc15;         /* yellowish hover like highlight */
-  color: #4b2e25;
+  background: #ffcd6b;               /* lighter orange/yellow hover */
+  color: #e31b4c;
 }
 
 /* RESULT SCREEN */
